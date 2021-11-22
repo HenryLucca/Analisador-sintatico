@@ -21,11 +21,29 @@ public class Token {
 
     private int type;
     private String text;
+    private int linha;
+    private int coluna;
 
     public Token(int type, String text) {
         super();
         this.type = type;
         this.text = text;
+    }
+
+    public int getColuna() {
+        return coluna;
+    }
+
+    public void setColuna(int coluna) {
+        this.coluna = coluna;
+    }
+
+    public int getLinha() {
+        return linha;
+    }
+
+    public void setLinha(int linha) {
+        this.linha = linha;
     }
 
     public Token() {

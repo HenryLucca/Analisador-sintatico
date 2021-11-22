@@ -1,5 +1,6 @@
 package br.com.compiladores.main;
 
+import br.com.compiladores.exceptions.IsiComecoException;
 import br.com.compiladores.exceptions.IsiLexicalException;
 import br.com.compiladores.exceptions.IsiSyntaxException;
 import br.com.compiladores.lexico.IsiScanner;
@@ -10,16 +11,16 @@ public class MainCase {
         try {
             IsiScanner sc = new IsiScanner("input.isi");
             IsiParser pa = new IsiParser(sc);
-
             pa.E();
-
-            System.out.println("O programa rodou com Exitô");
-
+            System.out.println("O programa rodou com Exitô");    
         } catch (IsiLexicalException ex) {
             System.out.println("Lexical ERROR " + ex.getMessage());
 
         } catch (IsiSyntaxException ex) {
             System.out.println("Sintatico ERROR " + ex.getMessage());
+
+        } catch (IsiComecoException ex) {
+            System.out.println("Inicio ERROR " + ex.getMessage());
 
         }
     }
