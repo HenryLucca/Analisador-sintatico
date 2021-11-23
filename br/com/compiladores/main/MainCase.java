@@ -1,6 +1,7 @@
 package br.com.compiladores.main;
 
 import br.com.compiladores.exceptions.IsiComecoException;
+import br.com.compiladores.exceptions.IsiFimException;
 import br.com.compiladores.exceptions.IsiLexicalException;
 import br.com.compiladores.exceptions.IsiSyntaxException;
 import br.com.compiladores.lexico.IsiScanner;
@@ -22,6 +23,9 @@ public class MainCase {
         } catch (IsiComecoException ex) {
             System.out.println("Inicio ERROR " + ex.getMessage());
 
-        }
+        }catch (IsiFimException ex) {
+            System.out.println("Final ERROR " + ex.getMessage());
+
+        } 
     }
 }
